@@ -1,5 +1,5 @@
 {
-  "name": "literaryLane",
+  "name": "literary-lane",
   "version": "2.0.0",
   "private": true,
   "author": "Austin Merilos",
@@ -9,7 +9,7 @@
     "seed-data": "keystone-next --seed-data"
   },
   "eslintConfig": {
-    "extends": "wesbos/typescript.js",
+    "extends": "literarylane/typescript.js",
     "rules": {
       "@typescript-eslint/no-unsafe-assignment": 0
     }
@@ -58,7 +58,6 @@
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-typescript": "^12.0.0",
     "eslint-config-prettier": "^6.15.0",
-    "eslint-config-wesbos": "^2.0.0-beta.4",
     "eslint-plugin-html": "^6.1.1",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",

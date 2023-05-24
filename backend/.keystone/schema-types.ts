@@ -199,6 +199,32 @@ export type ProductWhereInput = {
   readonly description_not_ends_with_i?: Scalars['String'] | null;
   readonly description_in?: ReadonlyArray<Scalars['String'] | null> | null;
   readonly description_not_in?: ReadonlyArray<Scalars['String'] | null> | null;
+  readonly status?: Scalars['String'] | null;
+  readonly status_not?: Scalars['String'] | null;
+  readonly status_contains?: Scalars['String'] | null;
+  readonly status_not_contains?: Scalars['String'] | null;
+  readonly status_starts_with?: Scalars['String'] | null;
+  readonly status_not_starts_with?: Scalars['String'] | null;
+  readonly status_ends_with?: Scalars['String'] | null;
+  readonly status_not_ends_with?: Scalars['String'] | null;
+  readonly status_i?: Scalars['String'] | null;
+  readonly status_not_i?: Scalars['String'] | null;
+  readonly status_contains_i?: Scalars['String'] | null;
+  readonly status_not_contains_i?: Scalars['String'] | null;
+  readonly status_starts_with_i?: Scalars['String'] | null;
+  readonly status_not_starts_with_i?: Scalars['String'] | null;
+  readonly status_ends_with_i?: Scalars['String'] | null;
+  readonly status_not_ends_with_i?: Scalars['String'] | null;
+  readonly status_in?: ReadonlyArray<Scalars['String'] | null> | null;
+  readonly status_not_in?: ReadonlyArray<Scalars['String'] | null> | null;
+  readonly price?: Scalars['Int'] | null;
+  readonly price_not?: Scalars['Int'] | null;
+  readonly price_lt?: Scalars['Int'] | null;
+  readonly price_lte?: Scalars['Int'] | null;
+  readonly price_gt?: Scalars['Int'] | null;
+  readonly price_gte?: Scalars['Int'] | null;
+  readonly price_in?: ReadonlyArray<Scalars['Int'] | null> | null;
+  readonly price_not_in?: ReadonlyArray<Scalars['Int'] | null> | null;
 };
 
 export type ProductWhereUniqueInput = {
@@ -211,11 +237,17 @@ export type SortProductsBy =
   | 'name_ASC'
   | 'name_DESC'
   | 'description_ASC'
-  | 'description_DESC';
+  | 'description_DESC'
+  | 'status_ASC'
+  | 'status_DESC'
+  | 'price_ASC'
+  | 'price_DESC';
 
 export type ProductUpdateInput = {
   readonly name?: Scalars['String'] | null;
   readonly description?: Scalars['String'] | null;
+  readonly status?: Scalars['String'] | null;
+  readonly price?: Scalars['Int'] | null;
 };
 
 export type ProductsUpdateInput = {
@@ -226,6 +258,8 @@ export type ProductsUpdateInput = {
 export type ProductCreateInput = {
   readonly name?: Scalars['String'] | null;
   readonly description?: Scalars['String'] | null;
+  readonly status?: Scalars['String'] | null;
+  readonly price?: Scalars['Int'] | null;
 };
 
 export type ProductsCreateInput = {
@@ -317,11 +351,13 @@ export type UserListFn = (
 
 export type ProductListTypeInfo = {
   key: 'Product';
-  fields: 'id' | 'name' | 'description';
+  fields: 'id' | 'name' | 'description' | 'status' | 'price';
   backing: {
     readonly id: string;
     readonly name?: string | null;
     readonly description?: string | null;
+    readonly status?: string | null;
+    readonly price?: number | null;
   };
   inputs: {
     where: ProductWhereInput;
