@@ -1,11 +1,18 @@
 import React from "react";
 import Header from "../components/header";
+import { ApolloProvider } from "@apollo/client";
+import withData from "../lib/withData";
 
-export default function App({ Component }) {
+function App({ Component, apollo }) {
+  console.log(apollo);
   return (
     <>
-      <Header />
-      <Component />
+      <ApolloProvider client={apollo}>
+        <Header />
+        <Component />
+      </ApolloProvider>
     </>
   );
 }
+
+export default withData(App);
