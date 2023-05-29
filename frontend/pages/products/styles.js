@@ -3,6 +3,7 @@ export const ProductsListStyles = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 100px;
+  padding: 25px;
 `;
 
 export const ProductItem = styled.div`
@@ -83,4 +84,5 @@ export const PriceTag = styled.span`
   position: absolute;
   top: 10px;
   right: 10px;
+  border-radius: 2px;
 `;
