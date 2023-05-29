@@ -1,9 +1,15 @@
 import styled from "styled-components";
+
 export const ProductsListStyles = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 100px;
   padding: 25px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 500px;
+    grid-gap: 50px;
+  }
 `;
 
 export const ProductItem = styled.div`
@@ -72,6 +78,18 @@ export const Title = styled.h3`
     color: white;
     padding: 0 1rem;
   }
+
+  @media (max-width: 768px) {
+    margin: 0;
+    font-size: 1.6rem;
+    transform: none;
+    margin-top: 0.5rem;
+
+    a {
+      font-size: 1.8rem;
+      padding: 0.5rem 1rem;
+    }
+  }
 `;
 
 export const PriceTag = styled.span`
@@ -85,4 +103,9 @@ export const PriceTag = styled.span`
   top: 10px;
   right: 10px;
   border-radius: 2px;
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+    padding: 0.3rem 0.6rem;
+  }
 `;
