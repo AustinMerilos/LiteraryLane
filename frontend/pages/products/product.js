@@ -1,5 +1,5 @@
 import React from "react";
-import { ProductItem, PriceTag, Title } from "./styles";
+import { ProductItem, PriceTag, Title } from "../../styles/productStyles";
 import Link from "next/link";
 import currencyFormater from "../../utils/currencyFormater";
 

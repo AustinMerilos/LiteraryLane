@@ -12,13 +12,17 @@ const HeaderContainer = styled.div`
   }
 `;
 
+const SearchBar = styled.div`
+  margin: 50px;
+`;
+
 export default function Header() {
   return (
     <>
       <HeaderContainer>
         <Navbar />
       </HeaderContainer>
-      <p>Search</p>
+      <SearchBar>Search</SearchBar>
     </>
   );
 }

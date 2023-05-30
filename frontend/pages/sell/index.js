@@ -1,5 +1,6 @@
 import React from "react";
+import SellForm from "./sellForm";
 
 export default function SellPage() {
-  return <div>sell page</div>;
+  return <SellForm />;
 }
