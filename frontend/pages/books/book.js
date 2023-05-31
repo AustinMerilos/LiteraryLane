@@ -1,19 +1,19 @@
 import React from "react";
-import { ProductItem, PriceTag, Title } from "../../styles/productStyles";
+import { BookItem, PriceTag, Title } from "../../styles/book";
 import Link from "next/link";
 import currencyFormater from "../../utils/currencyFormater";
 
-export default function Product({ product }) {
+export default function Book({ product }) {
   return (
-    <ProductItem>
+    <BookItem>
       <img
         src={product?.photo?.image?.publicUrlTransformed}
         alt={product.name}
       />
       <Title>
-        <Link href={`/product/${product.id}`}>{product.name}</Link>
+        <Link href={`/books/${product.id}`}>{product.name}</Link>
       </Title>
       <PriceTag>{currencyFormater(product.price)}</PriceTag>
-    </ProductItem>
+    </BookItem>
   );
 }

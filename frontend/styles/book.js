@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ProductsListStyles = styled.div`
+export const BookListStyles = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 100px;
@@ -12,7 +12,7 @@ export const ProductsListStyles = styled.div`
   }
 `;
 
-export const ProductItem = styled.div`
+export const BookItem = styled.div`
   background: white;
   border: 1px solid #ccc;
   border-radius: 4px;

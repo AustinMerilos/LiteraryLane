@@ -1,10 +1,10 @@
 import React from "react";
 import gql from "graphql-tag";
 import { useQuery } from "@apollo/client";
-import Product from "./product";
-import { ProductsListStyles } from "../../styles/productStyles";
+import { BookListStyles } from "../../styles/book";
+import Book from "./book";
 
-export const ALL_PRODUCTS_QUERY = gql`
+export const ALL_BOOKS_QUERY = gql`
   query ALL_PRODUCTS_QUERY($skip: Int = 0, $first: Int) {
     allProducts(first: $first, skip: $skip) {
       id
@@ -21,18 +21,18 @@ export const ALL_PRODUCTS_QUERY = gql`
   }
 `;
 
-export default function ProductList() {
-  const { data, error, loading } = useQuery(ALL_PRODUCTS_QUERY);
+export default function BookList() {
+  const { data, error, loading } = useQuery(ALL_BOOKS_QUERY);
   console.log(data, error, loading);
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
   return (
     <div>
-      <ProductsListStyles>
+      <BookListStyles>
         {data.allProducts.map((product) => (
-          <Product key={product.id} product={product} />
+          <Book key={product.id} product={product} />
         ))}
-      </ProductsListStyles>
+      </BookListStyles>
     </div>
   );
 }

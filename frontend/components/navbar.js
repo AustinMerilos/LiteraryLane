@@ -85,8 +85,8 @@ export default function Navbar() {
         </Link>
         <NavList>
           <NavItem>
-            <Link href="/products" style={{ textDecoration: "none" }}>
-              <NavLink>Products</NavLink>
+            <Link href="/books" style={{ textDecoration: "none" }}>
+              <NavLink>Books</NavLink>
             </Link>
           </NavItem>
           <NavItem>
