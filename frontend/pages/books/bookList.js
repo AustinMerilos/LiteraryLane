@@ -4,7 +4,7 @@ import { useQuery } from "@apollo/client";
 import { BookListStyles } from "../../styles/book";
 import Book from "./book";
 
-export const ALL_BOOKS_QUERY = gql`
+export const ALL_PRODUCTS_QUERY = gql`
   query ALL_PRODUCTS_QUERY($skip: Int = 0, $first: Int) {
     allProducts(first: $first, skip: $skip) {
       id
@@ -22,7 +22,7 @@ export const ALL_BOOKS_QUERY = gql`
 `;
 
 export default function BookList() {
-  const { data, error, loading } = useQuery(ALL_BOOKS_QUERY);
+  const { data, error, loading } = useQuery(ALL_PRODUCTS_QUERY);
   console.log(data, error, loading);
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
