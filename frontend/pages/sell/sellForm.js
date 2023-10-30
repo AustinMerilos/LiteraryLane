@@ -4,6 +4,7 @@ import { ALL_PRODUCTS_QUERY } from "../books/bookList";
 import Form from "../../styles/form";
 import useForm from "../../utils/useForm";
 import DisplayError from "../../components/errorMessage";
+import Router from "next/router";
 
 const CREATE_PRODUCT_MUTATION = gql`
   mutation CREATE_PRODUCT_MUTATION(
@@ -51,6 +52,9 @@ export default function SellForm() {
         // Submit the inputfields to the backend:
         const res = await createProduct();
         clearForm();
+        Router.push({
+          pathname: `/books/${res.data.createProduct.id}`,
+        });
       }}
     >
       <DisplayError error={error} />
