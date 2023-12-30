@@ -14,6 +14,11 @@ export default function Book({ product }) {
         <Link href={`/books/${product.id}`}>{product.name}</Link>
       </Title>
       <PriceTag>{currencyFormater(product.price)}</PriceTag>
+      <div>
+        <Link href={{ pathname: `update`, query: { id: product.id } }}>
+          Edit
+        </Link>
+      </div>
     </BookItem>
   );
 }
