@@ -2,6 +2,7 @@ import React from "react";
 import { BookItem, PriceTag, Title } from "../../styles/book";
 import Link from "next/link";
 import currencyFormater from "../../utils/currencyFormater";
+import DeleteBook from "../../components/deleteBook";
 
 export default function Book({ product }) {
   return (
@@ -19,6 +20,7 @@ export default function Book({ product }) {
           Edit
         </Link>
       </div>
+      <DeleteBook id={product.id}>Delete</DeleteBook>
     </BookItem>
   );
 }
