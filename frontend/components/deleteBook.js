@@ -10,9 +10,14 @@ const DELETE_BOOK_MUTATION = gql`
   }
 `;
 
+function update(cache, payload) {
+  cache.evict(cache.identify(payload.data.deleteProduct));
+}
+
 export default function DeleteBook({ id, children }) {
   const [deleteBook, { loading, error }] = useMutation(DELETE_BOOK_MUTATION, {
     variables: { id },
+    update: update,
   });
   return (
     <button
