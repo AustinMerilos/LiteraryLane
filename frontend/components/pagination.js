@@ -24,20 +24,14 @@ export default function Pagination({ page }) {
       <Head>
         <title>LiteraryLane - Page {page} of ___</title>
       </Head>
-      <Link
-        href={`../pages/books/bookList/${page - 1}`}
-        aria-disabled={page <= 1}
-      >
+      <Link href={`/books/${page - 1}`} aria-disabled={page <= 1}>
         ← Prev
       </Link>
       <p>
         Page {page} of {pageCount}{" "}
       </p>
       <p>{count} items total </p>
-      <Link
-        href={`../pages/books/bookList/${page + 1}`}
-        aria-disabled={page >= pageCount}
-      >
+      <Link href={`/books/${page + 1}`} aria-disabled={page >= pageCount}>
         Next →
       </Link>
     </PaginationStyles>
