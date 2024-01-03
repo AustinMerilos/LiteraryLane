@@ -109,3 +109,12 @@ export const PriceTag = styled.span`
     padding: 0.3rem 0.6rem;
   }
 `;
+
+export const ButtonContainer = styled.div`
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+
+  align-items: flex-end;
+  gap: 2rem;
+`;

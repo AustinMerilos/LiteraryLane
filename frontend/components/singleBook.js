@@ -3,6 +3,7 @@ import { useQuery } from "@apollo/client";
 import gql from "graphql-tag";
 import Head from "next/head";
 import styled from "styled-components";
+import currencyFormater from "../utils/currencyFormater";
 
 const SingleBookStyles = styled.div`
   display: grid;
@@ -62,7 +63,7 @@ export default function SingleBook() {
       <div>
         <h2>{Product.name} </h2>
         <p>{Product.description} </p>
-        <div>I cost {Product.price} </div>
+        <div>I cost {currencyFormater(Product.price)} </div>
       </div>
     </SingleBookStyles>
   );
