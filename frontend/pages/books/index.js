@@ -9,7 +9,7 @@ export default function BookPage() {
   return (
     <>
       <Pagination page={page || 1} />
-      <BookList />
+      <BookList page={page || 1} />
       <Pagination page={page || 1} />
     </>
   );
