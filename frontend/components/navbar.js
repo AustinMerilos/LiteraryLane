@@ -1,6 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
 import Link from "next/link";
+import useUser from "./user";
 
 // Styled navigation bar container
 const NavBar = styled.nav`
@@ -77,6 +78,7 @@ const Logo = styled.h1`
 
 // Navbar component
 export default function Navbar() {
+  const user = useUser();
   return (
     <>
       <NavBar>
@@ -89,21 +91,35 @@ export default function Navbar() {
               <NavLink>Books</NavLink>
             </Link>
           </NavItem>
-          <NavItem>
-            <Link href="/sell" style={{ textDecoration: "none" }}>
-              <NavLink>Sell</NavLink>
-            </Link>
-          </NavItem>
-          <NavItem>
-            <Link href="/account" style={{ textDecoration: "none" }}>
-              <NavLink>Account</NavLink>
-            </Link>
-          </NavItem>
-          <NavItem>
-            <Link href="/orders" style={{ textDecoration: "none" }}>
-              <NavLink>Orders</NavLink>
-            </Link>
-          </NavItem>
+          {user && (
+            <>
+              <NavItem>
+                <Link href="/sell" style={{ textDecoration: "none" }}>
+                  <NavLink>Sell</NavLink>
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link href="/account" style={{ textDecoration: "none" }}>
+                  <NavLink>Account</NavLink>
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link href="/orders" style={{ textDecoration: "none" }}>
+                  <NavLink>Orders</NavLink>
+                </Link>
+              </NavItem>
+            </>
+          )}
+
+          {!user && (
+            <>
+              <NavItem>
+                <Link href="/signIn" style={{ textDecoration: "none" }}>
+                  <NavLink>Sign in</NavLink>
+                </Link>
+              </NavItem>
+            </>
+          )}
         </NavList>
       </NavBar>
     </>
