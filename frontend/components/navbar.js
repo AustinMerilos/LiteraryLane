@@ -2,6 +2,7 @@ import React from "react";
 import { styled } from "styled-components";
 import Link from "next/link";
 import useUser from "./user";
+import SignOut from "./signout";
 
 // Styled navigation bar container
 const NavBar = styled.nav`
@@ -107,6 +108,10 @@ export default function Navbar() {
                 <Link href="/orders" style={{ textDecoration: "none" }}>
                   <NavLink>Orders</NavLink>
                 </Link>
+              </NavItem>
+
+              <NavItem>
+                <SignOut />
               </NavItem>
             </>
           )}
