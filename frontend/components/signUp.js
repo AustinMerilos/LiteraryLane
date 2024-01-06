@@ -2,8 +2,8 @@ import gql from "graphql-tag";
 import Form from "../styles/form";
 import useForm from "../utils/useForm";
 import { useMutation } from "@apollo/client";
-import { CURRENT_USER_QUERY } from "./user";
 import DisplayError from "./errorMessage";
+import { useState } from "react";
 
 const SIGNUP_MUTATION = gql`
   mutation SIGNUP_MUTATION(
@@ -18,13 +18,13 @@ const SIGNUP_MUTATION = gql`
     }
   }
 `;
-
 export default function SignUp() {
   const { inputs, handleChange, resetForm } = useForm({
     email: ``,
     name: ``,
     password: ``,
   });
+  const [passwordError, setPasswordError] = useState(null);
 
   const [signUp, { data, loading, error }] = useMutation(SIGNUP_MUTATION, {
     variables: inputs,
@@ -32,9 +32,21 @@ export default function SignUp() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    // Check if the password length is less than 8 characters
+
+    if (inputs.password.length < 8) {
+      setPasswordError("Password must be at least 8 or more characters long");
+      return;
+    } else {
+      // Clear the password error if it was previously set
+      setPasswordError(null);
+    }
+
     await signUp().catch(console.log(error));
+
     resetForm();
   }
+
   if (data?.createUser) {
     return (
       <>
@@ -42,6 +54,7 @@ export default function SignUp() {
       </>
     );
   }
+
   return (
     <Form method="POST" onSubmit={handleSubmit}>
       <h2>Sign up for a account</h2>
@@ -80,6 +93,8 @@ export default function SignUp() {
             onChange={handleChange}
           ></input>
         </label>
+        {/* Display password length error if present */}
+        {passwordError && <p>{passwordError}</p>}
         <button type="Submit"> Sign in</button>
       </fieldset>
     </Form>
