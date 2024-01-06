@@ -9,6 +9,7 @@ import {
   statelessSessions,
 } from "@keystone-next/keystone/session";
 import { sendPasswordResetEmail } from "./utils/mail";
+import { CartItem } from "./schemas/CartItem";
 
 const databaseURL =
   process.env.DATABASE_URL || "mongodb://localhost/keystone-literary-lanes";
@@ -49,6 +50,7 @@ export default withAuth(
       User,
       Product,
       ProductImage,
+      CartItem,
     }),
     ui: {
       isAccessAllowed: ({ session }) => !!session?.data,
