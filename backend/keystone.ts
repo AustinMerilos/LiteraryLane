@@ -8,6 +8,7 @@ import {
   withItemData,
   statelessSessions,
 } from "@keystone-next/keystone/session";
+import { sendPasswordResetEmail } from "./utils/mail";
 
 const databaseURL =
   process.env.DATABASE_URL || "mongodb://localhost/keystone-literary-lanes";
@@ -27,7 +28,7 @@ const { withAuth } = createAuth({
   },
   passwordResetLink: {
     async sendToken(args) {
-      console.log(args);
+      await sendPasswordResetEmail(args.token, args.identity);
     },
   },
 });
