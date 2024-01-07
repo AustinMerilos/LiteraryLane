@@ -3,6 +3,7 @@ import { BookItem, PriceTag, Title, ButtonContainer } from "../../styles/book";
 import Link from "next/link";
 import currencyFormater from "../../utils/currencyFormater";
 import DeleteBook from "../../components/deleteBook";
+import AddToCart from "../../components/addToCart";
 
 export default function Book({ product }) {
   return (
@@ -21,6 +22,7 @@ export default function Book({ product }) {
             Edit
           </Link>
           <DeleteBook id={product.id}>Delete</DeleteBook>
+          <AddToCart id={product.id} />
         </ButtonContainer>
       </BookItem>
     </>

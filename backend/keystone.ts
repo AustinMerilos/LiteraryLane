@@ -48,6 +48,7 @@ export default withAuth(
       url: databaseURL,
     },
     lists: createSchema({
+      // Schema items go in here
       User,
       Product,
       ProductImage,
