@@ -54,7 +54,7 @@ const NavLink = styled.a`
   }
 `;
 
-const Logo = styled.h1`
+export const Logo = styled.h1`
   font-family: "Arial", sans-serif;
   font-size: 40px;
   color: #333;

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import PaginationStyles from "../styles/paginationstyles";
+import PaginationStyles from "../styles/pagination";
 import Link from "next/link";
 import gql from "graphql-tag";
 import { useQuery } from "@apollo/client";
@@ -22,7 +22,9 @@ export default function Pagination({ page }) {
   return (
     <PaginationStyles>
       <Head>
-        <title>LiteraryLane - Page {page} of ___</title>
+        <title>
+          LiteraryLane - Page {page} of {pageCount}
+        </title>
       </Head>
       <Link href={`/books/${page - 1}`} aria-disabled={page <= 1}>
         ← Prev

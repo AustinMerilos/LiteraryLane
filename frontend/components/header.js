@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./navbar";
 import Link from "next/link";
 import { styled } from "styled-components";
+import Cart from "./cart";
 
 const HeaderContainer = styled.div`
   align-items: center;
@@ -23,6 +24,7 @@ export default function Header() {
         <Navbar />
       </HeaderContainer>
       <SearchBar>Search</SearchBar>
+      <Cart />
     </>
   );
 }
