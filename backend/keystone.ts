@@ -10,6 +10,7 @@ import {
 } from "@keystone-next/keystone/session";
 import { sendPasswordResetEmail } from "./utils/mail";
 import { CartItem } from "./schemas/CartItem";
+import { extendGraphqlSchema } from "./mutations";
 
 const databaseURL =
   process.env.DATABASE_URL || "mongodb://localhost/keystone-literary-lanes";
@@ -52,6 +53,7 @@ export default withAuth(
       ProductImage,
       CartItem,
     }),
+    extendGraphqlSchema,
     ui: {
       isAccessAllowed: ({ session }) => !!session?.data,
     },

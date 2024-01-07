@@ -95,7 +95,7 @@ export default function SignUp() {
         </label>
         {/* Display password length error if present */}
         {passwordError && <p>{passwordError}</p>}
-        <button type="Submit"> Sign in</button>
+        <button type="Submit"> Sign up</button>
       </fieldset>
     </Form>
   );
