@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 import Link from "next/link";
 import useUser from "./user";
 import SignOut from "./signout";
+import { useCart } from "../utils/cartState";
 
 // Styled navigation bar container
 const NavBar = styled.nav`
@@ -54,6 +55,25 @@ const NavLink = styled.a`
   }
 `;
 
+const CartButton = styled.a`
+  font-size: 28px;
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #555;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    padding: 3px 8px;
+  }
+`;
+
 export const Logo = styled.h1`
   font-family: "Arial", sans-serif;
   font-size: 40px;
@@ -80,6 +100,7 @@ export const Logo = styled.h1`
 // Navbar component
 export default function Navbar() {
   const user = useUser();
+  const { openCart } = useCart();
   return (
     <>
       <NavBar>
@@ -112,6 +133,9 @@ export default function Navbar() {
 
               <NavItem>
                 <SignOut />
+              </NavItem>
+              <NavItem>
+                <CartButton onClick={openCart}>Cart</CartButton>
               </NavItem>
             </>
           )}

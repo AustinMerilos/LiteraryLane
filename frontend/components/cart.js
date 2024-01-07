@@ -4,6 +4,7 @@ import { Logo } from "./navbar";
 import useUser from "./user";
 import currencyFormater from "../utils/currencyFormater";
 import totalPrice from "../utils/totalPrice";
+import { useCart } from "../utils/cartState";
 
 const CartItemStyles = styled.li`
   padding: 1rem 0;
@@ -44,15 +45,17 @@ function CartItem({ cartItem }) {
 
 export default function Cart() {
   const me = useUser();
+  const { cartOpen, closeCart } = useCart();
   if (!me) {
     return null;
   }
   return (
     <>
-      <CartStyles open>
+      <CartStyles open={cartOpen}>
         <header>
-          <Logo>{me.email}'s Cart</Logo>
+          <Logo>{me.name}'s Cart</Logo>
         </header>
+        <button onClick={closeCart}>close cart</button>
         <ul>
           {me.cart.map((cartItem) => (
             <CartItem key={cartItem.id} cartItem={cartItem} />

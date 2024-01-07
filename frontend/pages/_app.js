@@ -2,13 +2,16 @@ import React from "react";
 import Header from "../components/header";
 import { ApolloProvider } from "@apollo/client";
 import withData from "../utils/withData";
+import { CartStateProvider } from "../utils/cartState";
 
 function App({ Component, apollo }) {
   return (
     <>
       <ApolloProvider client={apollo}>
-        <Header />
-        <Component />
+        <CartStateProvider>
+          <Header />
+          <Component />
+        </CartStateProvider>
       </ApolloProvider>
     </>
   );
