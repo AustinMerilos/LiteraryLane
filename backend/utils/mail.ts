@@ -1,7 +1,7 @@
 import { createTransport } from "nodemailer";
 
 const transport = createTransport({
-  host: process.env.MAIL_HOST,
+  service: process.env.MAIL_HOST,
   port: process.env.MAIL_PORT,
   auth: {
     user: process.env.MAIL_USER,
@@ -48,7 +48,7 @@ export async function sendPasswordResetEmail(
   // email the user a token
   const info = (await transport.sendMail({
     to,
-    from: "test@example.com",
+    from: "LiteraryLane <{user}>",
     subject: "Your password reset token!",
     html: makeEmail(`Your Password Reset Token is here!
       <a href="${process.env.FRONTEND_URL}/reset?token=${resetToken}">Click Here to reset</a>
