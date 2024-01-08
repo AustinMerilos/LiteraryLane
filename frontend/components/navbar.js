@@ -4,6 +4,7 @@ import Link from "next/link";
 import useUser from "./user";
 import SignOut from "./signout";
 import { useCart } from "../utils/cartState";
+import CartCount from "./cartCount";
 
 // Styled navigation bar container
 const NavBar = styled.nav`
@@ -54,8 +55,11 @@ const NavLink = styled.a`
     padding: 3px 8px;
   }
 `;
-
-const CartButton = styled.a`
+const CartContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const CartButton = styled.button`
   font-size: 28px;
   color: #fff;
   text-decoration: none;
@@ -63,6 +67,9 @@ const CartButton = styled.a`
   border-radius: 5px;
   transition: background-color 0.3s ease;
   cursor: pointer;
+  border: none; // Remove default button styles
+  background: none; // Remove default button styles
+  font-family: inherit; // Inherit font styles
 
   &:hover {
     background-color: #555;
@@ -135,7 +142,15 @@ export default function Navbar() {
                 <SignOut />
               </NavItem>
               <NavItem>
-                <CartButton onClick={openCart}>Cart</CartButton>
+                <CartContainer>
+                  <CartButton onClick={openCart}>Cart</CartButton>
+                  <CartCount
+                    count={user.cart.reduce(
+                      (tally, cartItem) => tally + cartItem.quantity,
+                      0
+                    )}
+                  ></CartCount>
+                </CartContainer>
               </NavItem>
             </>
           )}
