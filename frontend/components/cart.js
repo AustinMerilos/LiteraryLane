@@ -67,7 +67,6 @@ export default function Cart() {
           <p>{currencyFormater(totalPrice(me.cart))}</p>
         </footer>
       </CartStyles>
-      ;
     </>
   );
 }

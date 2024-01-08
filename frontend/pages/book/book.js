@@ -14,7 +14,7 @@ export default function Book({ product }) {
           alt={product.name}
         />
         <Title>
-          <Link href={`/books/${product.id}`}>{product.name}</Link>
+          <Link href={`/book/${product.id}`}>{product.name}</Link>
         </Title>
         <PriceTag>{currencyFormater(product.price)}</PriceTag>
         <ButtonContainer>
