@@ -3,7 +3,7 @@ import { DropDown, DropDownItem, SearchStyles } from "../styles/dropDown";
 import { useRouter } from "next/router";
 import { useLazyQuery } from "@apollo/client";
 import gql from "graphql-tag";
-import { debounce } from "lodash";
+import debounce from "lodash/debounce";
 
 const SEARCH_PRODUCTS_QUERY = gql`
   query SEARCH_PRODUCTS_QUERY($searchTerm: String!) {

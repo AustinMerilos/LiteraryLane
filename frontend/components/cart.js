@@ -6,12 +6,12 @@ import currencyFormater from "../utils/currencyFormater";
 import totalPrice from "../utils/totalPrice";
 import { useCart } from "../utils/cartState";
 import RemoveFromCart from "./removeFromCart";
+import { CheckOut } from "./checkOut";
 
 const CartItemStyles = styled.li`
   padding: 1rem 0;
   border-bottom: 1px solid lightGrey;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+
   img {
     margin-right: 1rem;
   }
@@ -19,6 +19,15 @@ const CartItemStyles = styled.li`
   p {
     margin: 0;
   }
+`;
+
+const CartFooter = styled.div`
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-top: 1px solid lightGrey;
+  margin-bottom: 3rem;
 `;
 
 function CartItem({ cartItem }) {
@@ -63,9 +72,10 @@ export default function Cart() {
             <CartItem key={cartItem.id} cartItem={cartItem} />
           ))}
         </ul>
-        <footer>
+        <CartFooter>
           <p>{currencyFormater(totalPrice(me.cart))}</p>
-        </footer>
+          <CheckOut />
+        </CartFooter>
       </CartStyles>
     </>
   );
