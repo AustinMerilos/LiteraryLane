@@ -3,6 +3,13 @@ import Header from "../components/header";
 import { ApolloProvider } from "@apollo/client";
 import withData from "../utils/withData";
 import { CartStateProvider } from "../utils/cartState";
+import nProgress from "nprogress";
+import { Router } from "next/router";
+import "../styles/nprogress.css";
+
+Router.events.on("routeChangeStart", () => NProgress.start());
+Router.events.on("routeChangeComplete", () => NProgress.done());
+Router.events.on("routeChangeError", () => nProgress.done());
 
 function App({ Component, apollo }) {
   return (
