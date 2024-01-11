@@ -535,14 +535,14 @@ export type OrderItemWhereInput = {
   readonly price_gte?: Scalars['Int'] | null;
   readonly price_in?: ReadonlyArray<Scalars['Int'] | null> | null;
   readonly price_not_in?: ReadonlyArray<Scalars['Int'] | null> | null;
-  readonly quanity?: Scalars['Int'] | null;
-  readonly quanity_not?: Scalars['Int'] | null;
-  readonly quanity_lt?: Scalars['Int'] | null;
-  readonly quanity_lte?: Scalars['Int'] | null;
-  readonly quanity_gt?: Scalars['Int'] | null;
-  readonly quanity_gte?: Scalars['Int'] | null;
-  readonly quanity_in?: ReadonlyArray<Scalars['Int'] | null> | null;
-  readonly quanity_not_in?: ReadonlyArray<Scalars['Int'] | null> | null;
+  readonly quantity?: Scalars['Int'] | null;
+  readonly quantity_not?: Scalars['Int'] | null;
+  readonly quantity_lt?: Scalars['Int'] | null;
+  readonly quantity_lte?: Scalars['Int'] | null;
+  readonly quantity_gt?: Scalars['Int'] | null;
+  readonly quantity_gte?: Scalars['Int'] | null;
+  readonly quantity_in?: ReadonlyArray<Scalars['Int'] | null> | null;
+  readonly quantity_not_in?: ReadonlyArray<Scalars['Int'] | null> | null;
   readonly order?: OrderWhereInput | null;
   readonly order_is_null?: Scalars['Boolean'] | null;
 };
@@ -562,8 +562,8 @@ export type SortOrderItemsBy =
   | 'photo_DESC'
   | 'price_ASC'
   | 'price_DESC'
-  | 'quanity_ASC'
-  | 'quanity_DESC'
+  | 'quantity_ASC'
+  | 'quantity_DESC'
   | 'order_ASC'
   | 'order_DESC';
 
@@ -572,7 +572,7 @@ export type OrderItemUpdateInput = {
   readonly description?: Scalars['String'] | null;
   readonly photo?: ProductImageRelateToOneInput | null;
   readonly price?: Scalars['Int'] | null;
-  readonly quanity?: Scalars['Int'] | null;
+  readonly quantity?: Scalars['Int'] | null;
   readonly order?: OrderRelateToOneInput | null;
 };
 
@@ -586,7 +586,7 @@ export type OrderItemCreateInput = {
   readonly description?: Scalars['String'] | null;
   readonly photo?: ProductImageRelateToOneInput | null;
   readonly price?: Scalars['Int'] | null;
-  readonly quanity?: Scalars['Int'] | null;
+  readonly quantity?: Scalars['Int'] | null;
   readonly order?: OrderRelateToOneInput | null;
 };
 
@@ -892,7 +892,7 @@ export type OrderItemListTypeInfo = {
     | 'description'
     | 'photo'
     | 'price'
-    | 'quanity'
+    | 'quantity'
     | 'order';
   backing: {
     readonly id: string;
@@ -900,7 +900,7 @@ export type OrderItemListTypeInfo = {
     readonly description?: string | null;
     readonly photo?: string | null;
     readonly price?: number | null;
-    readonly quanity?: number | null;
+    readonly quantity?: number | null;
     readonly order?: string | null;
   };
   inputs: {

@@ -21,7 +21,7 @@ export const OrderItem = list({
     }),
 
     price: integer(),
-    quanity: integer(),
+    quantity: integer(),
     order: relationship({ ref: "Order.items" }),
   },
 });
