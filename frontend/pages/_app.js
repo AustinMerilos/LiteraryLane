@@ -7,8 +7,8 @@ import nProgress from "nprogress";
 import { Router } from "next/router";
 import "../styles/nprogress.css";
 
-Router.events.on("routeChangeStart", () => NProgress.start());
-Router.events.on("routeChangeComplete", () => NProgress.done());
+Router.events.on("routeChangeStart", () => nProgress.start());
+Router.events.on("routeChangeComplete", () => nProgress.done());
 Router.events.on("routeChangeError", () => nProgress.done());
 
 function App({ Component, apollo }) {

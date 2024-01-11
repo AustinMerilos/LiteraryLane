@@ -12,8 +12,8 @@ export const Order = list({
   fields: {
     label: virtual({
       graphQLReturnType: "String",
-      resolver: function (item) {
-        return ` ${currencyFormater(item.total)}`;
+      resolver(item) {
+        return `${currencyFormater(item.total)}`;
       },
     }),
     total: integer(),

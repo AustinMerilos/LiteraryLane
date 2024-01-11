@@ -35,6 +35,7 @@ function CheckOutForm() {
       type: "card",
       card: elements.getElement(CardElement),
     });
+    console.log(paymentMethod);
 
     if (error) {
       setError(error);
