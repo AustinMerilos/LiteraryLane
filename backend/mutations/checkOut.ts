@@ -1,9 +1,13 @@
-import { CartItemCreateInput } from "../.keystone/schema-types";
+import { CartItem } from "../schemas/CartItem";
+import { User } from "../schemas/User";
+import {
+  CartItemCreateInput,
+  OrderCreateInput,
+} from "../.keystone/schema-types";
 
-import { KeystoneContext, SessionStore } from "@keystone-next/types";
+/* eslint-disable */
+import { KeystoneContext } from "@keystone-next/types";
 import stripeConfig from "../utils/stripe";
-import { Context } from ".keystone/types";
-import { Order } from ".prisma/client";
 
 const graphql = String.raw;
 
@@ -14,15 +18,17 @@ interface Arguments {
 async function checkout(
   root: any,
   { token }: Arguments,
-  context: Context
-): Promise<Order> {
+  context: KeystoneContext
+): Promise<OrderCreateInput> {
+  // 1. Make sure they are signed in
   const userId = context.session.itemId;
   if (!userId) {
     throw new Error("Sorry! You must be signed in to create an order!");
   }
+  // 1.5 Query the current user
   const user = await context.lists.User.findOne({
     where: { id: userId },
-    resolveFields: graphql`
+    resolveFields: `
       id
       name
       email
@@ -55,6 +61,7 @@ async function checkout(
   },
   0);
   console.log(amount);
+
   const charge = await stripeConfig.paymentIntents
     .create({
       amount,
