@@ -36,7 +36,6 @@ export default function Search() {
   );
   const items = data?.searchTerms || [];
   const findItemsDebounce = debounce(findItems, 350);
-  resetIdCounter();
   const {
     isOpen,
     inputValue,
