@@ -1,4 +1,4 @@
-export default function currencyFormater(amount = 0) {
+export default function currencyFormatter(amount = 0) {
   // Define formatting options
   const options = {
     style: "currency",
@@ -10,9 +10,9 @@ export default function currencyFormater(amount = 0) {
   // Create an Intl.NumberFormat instance with the specified options
   const formatter = Intl.NumberFormat("en-US", options);
 
-  // Format the amount and return the result
+  // Format the amount and return the result without the currency symbol
   const formattedAmount = formatter.format(amount / 100);
 
-  // Append ".00" if it's a clean dollar amount
-  return formattedAmount.replace(/\.\d$/, ".00");
+  // Remove the currency symbol and return the formatted amount
+  return formattedAmount.replace(/^\D+/, "");
 }

@@ -9,12 +9,16 @@ import RemoveFromCart from "./removeFromCart";
 import { CheckOut } from "./checkOut";
 
 const CartItemStyles = styled.li`
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* Adjust the column widths based on your needs */
   padding: 1rem 0;
   border-bottom: 1px solid lightGrey;
 
   img {
     margin-right: 1rem;
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
   }
+
   h3,
   p {
     margin: 0;
@@ -30,6 +34,25 @@ const CartFooter = styled.div`
   margin-bottom: 3rem;
 `;
 
+const CloseButton = styled.button`
+  background: black;
+  color: white;
+  font-size: 3rem;
+  border: 0;
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  &:hover {
+    color: orange;
+    cursor: pointer;
+  }
+`;
+
+const TextContainer = styled.div`
+  justify-content: top;
+  margin: 25px;
+`;
+
 function CartItem({ cartItem }) {
   const book = cartItem.product;
   if (!book) return null;
@@ -39,16 +62,17 @@ function CartItem({ cartItem }) {
         width="100"
         src={book.photo.image.publicUrlTransformed}
         alt={book.name}
-      ></img>
-      <div>
+      />
+
+      <TextContainer>
         <h3>{book.name}</h3>
         <p>
-          {currencyFormater(book.price * cartItem.quantity)}-
           <em>
             {cartItem.quantity} &times; {currencyFormater(book.price)} each
           </em>
         </p>
-      </div>
+        <p> = {currencyFormater(book.price * cartItem.quantity)} total</p>
+      </TextContainer>
       <RemoveFromCart id={cartItem.id} />
     </CartItemStyles>
   );
@@ -66,7 +90,7 @@ export default function Cart() {
         <header>
           <Logo>{me.name}'s Cart</Logo>
         </header>
-        <button onClick={closeCart}>close cart</button>
+        <CloseButton onClick={closeCart}> &times; </CloseButton>
         <ul>
           {me.cart.map((cartItem) => (
             <CartItem key={cartItem.id} cartItem={cartItem} />

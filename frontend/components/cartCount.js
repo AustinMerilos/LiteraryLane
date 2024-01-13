@@ -6,13 +6,14 @@ const Dot = styled.div`
   color: white;
   border-radius: 50%;
   padding: 0.5rem;
-  line-height: 2rem;
   font-feature-settings: "tnum";
   font-variant-numeric: tabular-nums;
 `;
 
 const AnimationStyles = styled.span`
   position: relative;
+  display: inline-block; /* Ensure inline-block for proper alignment */
+  vertical-align: middle; /* Adjust vertical alignment */
   .count {
     display: block;
     position: relative;
@@ -32,7 +33,6 @@ const AnimationStyles = styled.span`
   }
   .count-exit-active {
     transform: scale(4) rotateX(0.5turn);
-  }
 `;
 
 export default function CartCount({ count }) {

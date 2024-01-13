@@ -22,7 +22,7 @@ const NavBar = styled.nav`
 // Styled navigation bar list
 const NavList = styled.ul`
   list-style: none;
-  flex: auto;
+  flex: auto; /* Ensure the NavList takes up the available space */
   display: flex;
   justify-content: center;
   padding: 10px;
@@ -55,11 +55,8 @@ const NavLink = styled.a`
     padding: 3px 8px;
   }
 `;
-const CartContainer = styled.div`
-  display: flex;
-  align-items: center;
-`;
-const CartButton = styled.button`
+
+const CartButton = styled.a`
   font-size: 28px;
   color: #fff;
   text-decoration: none;
@@ -142,17 +139,15 @@ export default function Navbar() {
                 <SignOut />
               </NavItem>
               <NavItem>
-                <CartContainer>
-                  <CartButton onClick={openCart}>Cart</CartButton>
-                  <CartCount
-                    count={user.cart.reduce(
-                      (tally, cartItem) =>
-                        tally + (cartItem.product ? cartItem.quantity : 0),
-                      0
-                    )}
-                  ></CartCount>
-                </CartContainer>
+                <CartButton onClick={openCart}>Cart</CartButton>
               </NavItem>
+              <CartCount
+                count={user.cart.reduce(
+                  (tally, cartItem) =>
+                    tally + (cartItem.product ? cartItem.quantity : 0),
+                  0
+                )}
+              />
             </>
           )}
 
