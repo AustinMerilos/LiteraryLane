@@ -17,10 +17,6 @@ const generatedPermissions = Object.fromEntries(
 // checks to see if someone meets the critera can add additional permissions
 export const permissions = {
   ...generatedPermissions,
-
-  example({ session }: ListAccessArgs): boolean {
-    return !!session?.data.name.includes("Austin");
-  },
 };
 
 export const rules = {
