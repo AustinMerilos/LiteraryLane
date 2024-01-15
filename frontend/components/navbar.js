@@ -128,12 +128,6 @@ export default function Navbar() {
                   </Link>
                 </NavItem>
               )}
-
-              <NavItem>
-                <Link href="/account" style={{ textDecoration: "none" }}>
-                  <NavLink>Account</NavLink>
-                </Link>
-              </NavItem>
               <NavItem>
                 <Link href="/orders" style={{ textDecoration: "none" }}>
                   <NavLink>Orders</NavLink>

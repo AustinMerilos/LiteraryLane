@@ -8,6 +8,7 @@ import useUser from "../../components/user";
 import useAdmin from "../../components/role";
 
 export default function Book({ product }) {
+  const user = useUser();
   const isAdmin = useAdmin();
   return (
     <>
@@ -26,6 +27,10 @@ export default function Book({ product }) {
               Edit
             </Link>
             <DeleteBook id={product.id}>Delete</DeleteBook>
+          </ButtonContainer>
+        )}
+        {user && (
+          <ButtonContainer>
             <AddToCart id={product.id} />
           </ButtonContainer>
         )}
