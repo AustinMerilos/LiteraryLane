@@ -1,6 +1,7 @@
 import React from "react";
 import SellForm from "./sellForm";
 import styled from "styled-components";
+import PleaseSignin from "../../components/pleaseSignin";
 
 const Container = styled.div`
   display: flex;
@@ -10,8 +11,10 @@ const Container = styled.div`
 
 export default function SellPage() {
   return (
-    <Container>
-      <SellForm />
-    </Container>
+    <PleaseSignin>
+      <Container>
+        <SellForm />
+      </Container>
+    </PleaseSignin>
   );
 }

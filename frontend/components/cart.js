@@ -60,7 +60,7 @@ function CartItem({ cartItem }) {
     <CartItemStyles>
       <img
         width="100"
-        src={book.photo.image.publicUrlTransformed}
+        src={book.photo?.image.publicUrlTransformed}
         alt={book.name}
       />
 
