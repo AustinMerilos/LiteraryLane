@@ -5,6 +5,7 @@ import useUser from "./user";
 import SignOut from "./signout";
 import { useCart } from "../utils/cartState";
 import CartCount from "./cartCount";
+import useAdmin from "./role";
 
 // Styled navigation bar container
 const NavBar = styled.nav`
@@ -104,6 +105,7 @@ export const Logo = styled.h1`
 // Navbar component
 export default function Navbar() {
   const user = useUser();
+  const isAdmin = useAdmin();
   const { openCart } = useCart();
   return (
     <>
@@ -119,11 +121,14 @@ export default function Navbar() {
           </NavItem>
           {user && (
             <>
-              <NavItem>
-                <Link href="/sell" style={{ textDecoration: "none" }}>
-                  <NavLink>Sell</NavLink>
-                </Link>
-              </NavItem>
+              {isAdmin && (
+                <NavItem>
+                  <Link href="/sell" style={{ textDecoration: "none" }}>
+                    <NavLink>Sell</NavLink>
+                  </Link>
+                </NavItem>
+              )}
+
               <NavItem>
                 <Link href="/account" style={{ textDecoration: "none" }}>
                   <NavLink>Account</NavLink>

@@ -31,11 +31,11 @@ export const CURRENT_USER_QUERY = gql`
   }
 `;
 
-export default function useUser() {
+export default function useAdmin() {
   const { data } = useQuery(CURRENT_USER_QUERY);
   console.log("User data:", data);
 
-  const user = data?.authenticatedItem;
+  const isAdmin = data?.authenticatedItem?.role?.name === "Admin";
 
-  return user;
+  return isAdmin;
 }

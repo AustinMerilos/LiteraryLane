@@ -14,7 +14,7 @@ export const cloudinary = {
 export const ProductImage = list({
   access: {
     create: isSignedIn,
-    read: () => false,
+    read: () => true,
     update: permissions.canManageProducts,
     delete: permissions.canManageProducts,
   },
