@@ -4,6 +4,7 @@ import { useMutation, useQuery } from "@apollo/client";
 import Form from "../styles/form";
 import DisplayError from "./errorMessage";
 import useForm from "../utils/useForm";
+import Router from "next/router";
 
 const SINGLE_BOOK_QUERY = gql`
   query SINGLE_BOOK_QUERY($id: ID!) {
@@ -65,6 +66,11 @@ export default function UpdateBook({ id }) {
             price: inputs.price,
           },
         }).catch(console.error);
+        clearForm();
+        Router.push({
+          pathname: `/book/${res.data.updateProduct.id}`,
+        });
+
         // // Submit the inputfields to the backend:
         // const res = await createProduct();
         // clearForm();

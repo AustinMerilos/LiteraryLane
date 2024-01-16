@@ -23,7 +23,7 @@ export default function Book({ product }) {
         <PriceTag>{currencyFormater(product.price)}</PriceTag>
         {isAdmin && (
           <ButtonContainer>
-            <Link href={{ pathname: `update`, query: { id: product.id } }}>
+            <Link href={{ pathname: "/update", query: { id: product.id } }}>
               Edit
             </Link>
             <DeleteBook id={product.id}>Delete</DeleteBook>
