@@ -6,6 +6,7 @@ import SignOut from "./signout";
 import { useCart } from "../utils/cartState";
 import CartCount from "./cartCount";
 import useAdmin from "./role";
+import headerLogo from "../assets";
 
 // Styled navigation bar container
 const NavBar = styled.nav`
@@ -101,6 +102,10 @@ export const Logo = styled.h1`
     padding: 8px;
   }
 `;
+const LogoImage = styled.img`
+  margin-right: auto;
+  width: 50%;
+`;
 
 // Navbar component
 export default function Navbar() {
@@ -111,6 +116,7 @@ export default function Navbar() {
     <>
       <NavBar>
         <Link href="/" passHref>
+          <LogoImage src={headerLogo.bookLogo} alt="logo"></LogoImage>
           <Logo>LiteraryLane</Logo>
         </Link>
         <NavList>

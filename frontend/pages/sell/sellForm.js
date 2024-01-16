@@ -53,7 +53,7 @@ export default function SellForm() {
         const res = await createProduct();
         clearForm();
         Router.push({
-          pathname: `/books/${res.data.createProduct.id}`,
+          pathname: `/book/${res.data.createProduct.id}`,
         });
       }}
     >

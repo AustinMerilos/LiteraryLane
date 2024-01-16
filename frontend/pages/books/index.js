@@ -8,7 +8,6 @@ export default function BookPage() {
   const page = parseInt(query.page);
   return (
     <>
-      <Pagination page={page || 1} />
       <BookList page={page || 1} />
       <Pagination page={page || 1} />
     </>

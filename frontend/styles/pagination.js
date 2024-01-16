@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const PaginationStyles = styled.div`
   text-align: center;
-  display: inline-grid;
+  display: grid;
   grid-template-columns: repeat(4, auto);
   align-items: stretch;
   justify-content: center;
@@ -13,7 +13,7 @@ const PaginationStyles = styled.div`
   & > * {
     margin: 0;
     padding: 15px 30px;
-    border-right: 1px solid var(--lightGray);
+    border-right: 1px solid lightGray;
     &:last-child {
       border-right: 0;
     }
