@@ -4,6 +4,7 @@ import useForm from "../utils/useForm";
 import { useMutation } from "@apollo/client";
 import { CURRENT_USER_QUERY } from "./user";
 import DisplayError from "./errorMessage";
+import Router from "next/router";
 
 const SIGNIN_MUTATION = gql`
   mutation SIGNIN_MUTATION($email: String!, $password: String!) {
@@ -38,6 +39,9 @@ export default function SignIn() {
     e.preventDefault();
     await signin();
     resetForm();
+    Router.push({
+      pathname: `/books`,
+    });
   }
 
   const error =

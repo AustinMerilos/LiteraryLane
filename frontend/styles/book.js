@@ -112,9 +112,10 @@ export const PriceTag = styled.span`
 
 export const ButtonContainer = styled.div`
   display: grid;
-  grid-auto-columns: 1fr;
+  grid-auto-columns: 0.5fr;
   grid-auto-flow: column;
-
+  justify-content: center;
+  margin-top: 15px;
   align-items: flex-end;
   gap: 2rem;
 `;

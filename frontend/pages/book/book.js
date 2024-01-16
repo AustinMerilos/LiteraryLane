@@ -29,11 +29,9 @@ export default function Book({ product }) {
             <DeleteBook id={product.id}>Delete</DeleteBook>
           </ButtonContainer>
         )}
-        {user && (
-          <ButtonContainer>
-            <AddToCart id={product.id} />
-          </ButtonContainer>
-        )}
+        <ButtonContainer>
+          {user && <AddToCart id={product.id} />}
+        </ButtonContainer>
       </BookItem>
     </>
   );

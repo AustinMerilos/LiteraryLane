@@ -6,7 +6,7 @@ import SignOut from "./signout";
 import { useCart } from "../utils/cartState";
 import CartCount from "./cartCount";
 import useAdmin from "./role";
-import headerLogo from "../assets";
+import headerLogo from "../public/assets";
 
 // Styled navigation bar container
 const NavBar = styled.nav`
@@ -116,7 +116,10 @@ export default function Navbar() {
     <>
       <NavBar>
         <Link href="/" passHref>
-          <LogoImage src={headerLogo.bookLogo} alt="logo"></LogoImage>
+          <LogoImage
+            src={headerLogo.bookLogo}
+            alt="image of homestead logo"
+          ></LogoImage>
           <Logo>LiteraryLane</Logo>
         </Link>
         <NavList>

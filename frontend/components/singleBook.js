@@ -7,17 +7,49 @@ import currencyFormater from "../utils/currencyFormater";
 
 const SingleBookStyles = styled.div`
   display: grid;
-  grid-auto-columns: 1fr;
+  grid-auto-columns: 0.4fr;
   grid-auto-flow: column;
   min-height: 800px;
   max-width: var(--maxwidth);
   justify-content: center;
   align-items: top;
-  gap: 2rem;
+  gap: 1rem;
   img {
     width: 100%;
     object-fit: contain;
   }
+`;
+const BookImage = styled.img`
+  width: 100%;
+  object-fit: contain;
+  border-radius: 8px; /* Optional: Add border-radius for rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add box-shadow for a subtle shadow effect */
+`;
+
+const BookContainer = styled.div`
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+`;
+
+const BookTitle = styled.h2`
+  font-size: 30px;
+  margin-bottom: 10px;
+`;
+
+const BookDescription = styled.p`
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+`;
+
+const BookPrice = styled.h3`
+  font-size: 25px;
+  color: #333;
 `;
 
 const SINGLE_ITEM_QUERY = gql`
@@ -51,20 +83,21 @@ export default function SingleBook() {
   const { Product } = data;
   // Rest of your component logic using data and queryId
   return (
-    <SingleBookStyles>
+    <>
       <Head>
         <title>LiteraryLane | {Product.name}</title>
       </Head>
-
-      <img
-        src={Product.photo.image.publicUrlTransformed}
-        alt={Product.name}
-      ></img>
-      <div>
-        <h2>{Product.name} </h2>
-        <p>{Product.description} </p>
-        <div>I cost {currencyFormater(Product.price)} </div>
-      </div>
-    </SingleBookStyles>
+      <SingleBookStyles>
+        <BookImage
+          src={Product.photo.image.publicUrlTransformed}
+          alt={Product.name}
+        ></BookImage>
+        <BookContainer>
+          <BookTitle>{Product.name} </BookTitle>
+          <BookDescription>{Product.description} </BookDescription>
+          <BookPrice>Price: {currencyFormater(Product.price)}$ </BookPrice>
+        </BookContainer>
+      </SingleBookStyles>
+    </>
   );
 }

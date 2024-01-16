@@ -3,6 +3,6 @@
 module.exports = {
   reactStrictMode: true,
   server: {
-    port: 3001,
+    port: 3000,
   },
 };
