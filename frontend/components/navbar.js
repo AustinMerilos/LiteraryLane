@@ -81,35 +81,12 @@ const CartButton = styled.a`
   }
 `;
 
-export const Logo = styled.h1`
-  font-family: "Arial", sans-serif;
-  font-size: 40px;
-  color: #333;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  background: linear-gradient(to right, #ffcc00, #ff9900);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  border: 2px solid #333;
-  border-radius: 4px;
-  display: inline-block;
-  padding: 10px;
-  margin: 10px;
-  transform: skew(-10deg);
-
-  @media (max-width: 768px) {
-    font-size: 24px;
-    padding: 8px;
-  }
-`;
-
 const LogoContainer = styled.div`
   display: flex;
   align-items: center;
 `;
 
-export const LogoName = styled.h1`
+const LogoName = styled.h1`
   font-family: "Arial", sans-serif;
   font-size: 40px;
   color: #333;
@@ -129,7 +106,7 @@ export const LogoName = styled.h1`
   }
 `;
 
-export const LogoImage = styled(Image)`
+const LogoImage = styled(Image)`
   width: 100px;
   height: auto;
   margin-right: -40px;
@@ -143,13 +120,15 @@ export default function Navbar() {
   return (
     <>
       <NavBar>
-        <LogoContainer>
-          <LogoImage
-            src={headerLogo.bookLogo}
-            alt="image of LiteraryLane logo"
-          ></LogoImage>
-          <LogoName>LiteraryLane</LogoName>
-        </LogoContainer>
+        <Link href="/" style={{ textDecoration: "none" }}>
+          <LogoContainer>
+            <LogoImage
+              src={headerLogo.bookLogo}
+              alt="image of LiteraryLane logo"
+            ></LogoImage>
+            <LogoName>LiteraryLane</LogoName>
+          </LogoContainer>
+        </Link>
 
         <NavList>
           <NavItem>

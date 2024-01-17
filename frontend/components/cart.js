@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import CartStyles from "../styles/cart";
-import { Logo } from "./navbar";
 import useUser from "./user";
 import currencyFormater from "../utils/currencyFormater";
 import totalPrice from "../utils/totalPrice";
@@ -51,6 +50,29 @@ const CloseButton = styled.button`
 const TextContainer = styled.div`
   justify-content: top;
   margin: 25px;
+`;
+
+const Logo = styled.h1`
+  font-family: "Arial", sans-serif;
+  font-size: 40px;
+  color: #333;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(to right, #ffcc00, #ff9900);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 2px solid #333;
+  border-radius: 4px;
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  transform: skew(-10deg);
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+    padding: 8px;
+  }
 `;
 
 function CartItem({ cartItem }) {

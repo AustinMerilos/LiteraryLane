@@ -6,6 +6,7 @@ import { CartStateProvider } from "../utils/cartState";
 import nProgress from "nprogress";
 import { Router } from "next/router";
 import "../styles/nprogress.css";
+import Footer from "../components/footer";
 
 Router.events.on("routeChangeStart", () => nProgress.start());
 Router.events.on("routeChangeComplete", () => nProgress.done());
@@ -18,6 +19,7 @@ function App({ Component, apollo }) {
         <CartStateProvider>
           <Header />
           <Component />
+          <Footer />
         </CartStateProvider>
       </ApolloProvider>
     </>
