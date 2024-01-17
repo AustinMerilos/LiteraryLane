@@ -5,8 +5,7 @@
   "author": "Austin Merilos",
   "license": "MIT",
   "scripts": {
-    "dev": "keystone-next",
-    "seed-data": "keystone-next --seed-data"
+    "dev": "keystone-next"
   },
   "eslintConfig": {
     "extends": "literarylane/typescript.js",
