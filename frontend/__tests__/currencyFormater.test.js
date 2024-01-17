@@ -17,10 +17,10 @@ describe("format currency function", () => {
   });
 
   it("works with whole and fractional dollars", () => {
-    expect(currencyFormatter(140)).toEqual("1.40");
-    expect(currencyFormatter(5012)).toEqual("50.12");
+    expect(currencyFormatter(120)).toEqual("1.20");
+    expect(currencyFormatter(1011)).toEqual("10.11");
     expect(currencyFormatter(110)).toEqual("1.10");
     expect(currencyFormatter(101)).toEqual("1.01");
-    expect(currencyFormatter(34534545345345)).toEqual("345,345,453,453.45");
+    expect(currencyFormatter(12345678912345)).toEqual("123,456,789,123.45");
   });
 });
