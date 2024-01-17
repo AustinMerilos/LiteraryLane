@@ -7,6 +7,7 @@ import { useCart } from "../utils/cartState";
 import CartCount from "./cartCount";
 import useAdmin from "./role";
 import headerLogo from "../public/assets";
+import Image from "next/image";
 
 // Styled navigation bar container
 const NavBar = styled.nav`
@@ -102,9 +103,36 @@ export const Logo = styled.h1`
     padding: 8px;
   }
 `;
-const LogoImage = styled.img`
-  margin-right: auto;
-  width: 50%;
+
+const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const LogoName = styled.h1`
+  font-family: "Arial", sans-serif;
+  font-size: 40px;
+  color: #333;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(to right, #ffcc00, #ff9900);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 10px;
+  margin: 10px;
+  transform: skew(-10deg);
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+    padding: 8px;
+  }
+`;
+
+export const LogoImage = styled(Image)`
+  width: 100px;
+  height: auto;
+  margin-right: -40px;
 `;
 
 // Navbar component
@@ -115,13 +143,14 @@ export default function Navbar() {
   return (
     <>
       <NavBar>
-        <Link href="/" passHref>
+        <LogoContainer>
           <LogoImage
             src={headerLogo.bookLogo}
-            alt="image of homestead logo"
+            alt="image of LiteraryLane logo"
           ></LogoImage>
-          <Logo>LiteraryLane</Logo>
-        </Link>
+          <LogoName>LiteraryLane</LogoName>
+        </LogoContainer>
+
         <NavList>
           <NavItem>
             <Link href="/books" style={{ textDecoration: "none" }}>
