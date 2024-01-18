@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "keystone-next",
-    "seed-data": "keystone-next --seed-data"
+    "build": "keystone-next build",
+    "start": "keystone-next start"
   },
   "eslintConfig": {
     "extends": "literarylane/typescript.js",
@@ -48,6 +49,7 @@
     "nodemailer": "^6.9.8",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
+    "sharp": "^0.29.0",
     "stripe": "^8.130.0"
   },
   "devDependencies": {
