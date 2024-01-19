@@ -1,5 +1,6 @@
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import styled from "styled-components";
+import React from "react";
 
 const Dot = styled.div`
   background: orange;

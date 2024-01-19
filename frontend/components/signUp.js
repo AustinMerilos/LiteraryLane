@@ -4,6 +4,7 @@ import useForm from "../utils/useForm";
 import { useMutation } from "@apollo/client";
 import DisplayError from "./errorMessage";
 import { useState } from "react";
+import React from "react";
 
 const SIGNUP_MUTATION = gql`
   mutation SIGNUP_MUTATION(

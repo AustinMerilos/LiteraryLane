@@ -1,6 +1,7 @@
 import { useMutation } from "@apollo/client";
 import gql from "graphql-tag";
 import { CURRENT_USER_QUERY } from "./user";
+import React from "react";
 
 const ADD_TO_CART_MUTATION = gql`
   mutation ADD_TO_CART_MUTATION($id: ID!) {

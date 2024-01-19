@@ -5,6 +5,7 @@ import gql from "graphql-tag";
 import { useQuery } from "@apollo/client";
 import DisplayError from "./errorMessage";
 import { perPage } from "../config";
+import React from "react";
 
 export const PAGINATION_QUERY = gql`
   query PAGINATION_QUERY {

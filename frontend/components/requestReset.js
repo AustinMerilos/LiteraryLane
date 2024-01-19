@@ -3,6 +3,7 @@ import Form from "../styles/form";
 import useForm from "../utils/useForm";
 import { useMutation } from "@apollo/client";
 import DisplayError from "./errorMessage";
+import React from "react";
 
 const REQUEST_RESET_MUTATION = gql`
   mutation REQUEST_RESET_MUTATION($email: String!) {

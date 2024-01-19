@@ -13,6 +13,7 @@ import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useCart } from "../utils/cartState";
 import { CURRENT_USER_QUERY } from "./user";
+import React from "react";
 
 const CheckOutFormStyle = styled.form`
   box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.04);

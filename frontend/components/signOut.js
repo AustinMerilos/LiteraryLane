@@ -2,6 +2,7 @@ import gql from "graphql-tag";
 import { CURRENT_USER_QUERY } from "./user";
 import { useMutation } from "@apollo/client";
 import { styled } from "styled-components";
+import React from "react";
 
 const SIGN_OUT_MUTATION = gql`
   mutation {

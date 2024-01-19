@@ -1,18 +1,27 @@
 # LiteraryLane
 
-
+<div align ="center">
+<img src="frontend/public/screens/LogoName.png" alt="Logo" width="200"/>
+</div>
 
 # LiteraryLane Website
 
-
-
 ## Screens
 
+<div float="left">
+<img
+src="frontend/public/screens/cartScreen.gif" , alt = 'cartScreen' height="auto" width="400" />
+<img src="frontend/public/screens/PaginationScreen.gif" alt = 'PaginationScreen' height="auto" width="400" />
+<img src="frontend/public/screens/forgotPasswordScreen.gif" alt = 'ForgotpasswordScreen' height="auto" width="400" />
+<img src="frontend/public/screens/SignINScreen.gif" alt = 'SignIn' height="auto" width="400" />
+<img src="frontend/public/screens/editScreen.gif" alt = 'navbar' height="auto" width="400" />
+<img src="" alt = 'navbar' height="auto" width="400" />
+<img src="" alt = 'navbar' height="auto" width="400" />
+<img src="" alt = 'navbar' height="auto" width="400" />
 
+</div>
 
 # Getting Started with Create React App
-
-
 
 ## Available Scripts
 
@@ -53,7 +62,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Learn More
 
-
-
 ## Documentation
-

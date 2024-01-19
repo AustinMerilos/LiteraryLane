@@ -1,4 +1,6 @@
 import { resetIdCounter, useCombobox } from "downshift";
+import React from "react";
+
 import { DropDown, DropDownItem, SearchStyles } from "../styles/dropDown";
 import { useRouter } from "next/router";
 import { useLazyQuery } from "@apollo/client";

@@ -6,6 +6,7 @@ import totalPrice from "../utils/totalPrice";
 import { useCart } from "../utils/cartState";
 import RemoveFromCart from "./removeFromCart";
 import { CheckOut } from "./checkOut";
+import React from "react";
 
 const CartItemStyles = styled.li`
   display: grid;
