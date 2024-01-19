@@ -1,7 +1,7 @@
 # LiteraryLane
 
 <div align ="center">
-<img src="frontend/public/screens/LogoName.png" alt="Logo" width="200"/>
+<img src="frontend/public/screens/LogoName.png" alt="Logo" width="500"/>
 </div>
 
 # LiteraryLane Website
@@ -11,13 +11,11 @@
 <div float="left">
 <img
 src="frontend/public/screens/cartScreen.gif" , alt = 'cartScreen' height="auto" width="400" />
+<img src="frontend/public/screens/searchScreen.gif" alt = 'SearchScreen' height="auto" width="400" />
 <img src="frontend/public/screens/PaginationScreen.gif" alt = 'PaginationScreen' height="auto" width="400" />
 <img src="frontend/public/screens/forgotPasswordScreen.gif" alt = 'ForgotpasswordScreen' height="auto" width="400" />
 <img src="frontend/public/screens/SignINScreen.gif" alt = 'SignIn' height="auto" width="400" />
-<img src="frontend/public/screens/editScreen.gif" alt = 'navbar' height="auto" width="400" />
-<img src="" alt = 'navbar' height="auto" width="400" />
-<img src="" alt = 'navbar' height="auto" width="400" />
-<img src="" alt = 'navbar' height="auto" width="400" />
+<img src="frontend/public/screens/editScreen.gif" alt = 'EditScreen' height="auto" width="400" />
 
 </div>
 
