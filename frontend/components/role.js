@@ -33,7 +33,6 @@ export const CURRENT_USER_QUERY = gql`
 
 export default function useAdmin() {
   const { data } = useQuery(CURRENT_USER_QUERY);
-  console.log("User data:", data);
 
   const isAdmin = data?.authenticatedItem?.role?.name === "Admin";
 

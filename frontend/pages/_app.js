@@ -1,4 +1,6 @@
 import React from "react";
+import Head from "next/head";
+
 import Header from "../components/header";
 import { ApolloProvider } from "@apollo/client";
 import withData from "../utils/withData";

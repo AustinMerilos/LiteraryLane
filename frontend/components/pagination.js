@@ -20,22 +20,24 @@ export default function Pagination({ page }) {
   const { count } = data._allProductsMeta;
   const pageCount = Math.ceil(count / perPage);
   return (
-    <PaginationStyles>
-      <Head>
-        <title>
-          LiteraryLane - Page {page} of {pageCount}
-        </title>
-      </Head>
-      <Link href={`/books/${page - 1}`} aria-disabled={page <= 1}>
-        ← Prev
-      </Link>
-      <p>
-        Page {page} of {pageCount}{" "}
-      </p>
-      <p>{count} items total </p>
-      <Link href={`/books/${page + 1}`} aria-disabled={page >= pageCount}>
-        Next →
-      </Link>
-    </PaginationStyles>
+    <>
+      <PaginationStyles>
+        <Head>
+          <title>
+            LiteraryLane - Page {page} of {pageCount}
+          </title>
+        </Head>
+        <Link href={`/books/${page - 1}`} aria-disabled={page <= 1}>
+          ← Prev
+        </Link>
+        <p>
+          Page {page} of {pageCount}{" "}
+        </p>
+        <p>{count} items total </p>
+        <Link href={`/books/${page + 1}`} aria-disabled={page >= pageCount}>
+          Next →
+        </Link>
+      </PaginationStyles>
+    </>
   );
 }

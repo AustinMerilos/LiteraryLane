@@ -33,7 +33,6 @@ export const CURRENT_USER_QUERY = gql`
 
 export default function useUser() {
   const { data } = useQuery(CURRENT_USER_QUERY);
-  console.log("User data:", data);
 
   const user = data?.authenticatedItem;
 
